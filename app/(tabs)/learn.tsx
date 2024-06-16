@@ -3,10 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { users as userArray } from '../../utils/data';
 import Card from '../../components/Card';
 import Footer from '../../components/Footer';
-
+import Swiper from 'react-native-deck-swiper';
 
 export default function Learn() {
-  
   const [users, setUsers] = useState(userArray);
 
   useEffect(() => {
@@ -15,24 +14,38 @@ export default function Learn() {
     }
   }, [users.length]);
 
+  const onSwiped = (index: number) => {
+    if (index === users.length - 1) {
+      setUsers(userArray); // Reset the users array when the last card is swiped
+    }
+  };
+
   return (
     <View style={styles.container}>
-      {users.map(({ id, name, image, location, distance, age}, index) => {
-        const isFirst = index === 0;
-        return (
-          <Card
-            key={id}
-            name={name}
-            location={location}
-            age={age}
-            distance={distance}
-            image={image}
-            isFirst={isFirst}
-          />
-        );
-      }).reverse()
-      }
-      <Footer/>
+      <Swiper
+        cards={users}
+        renderCard={(card) => {
+          return (
+            <Card
+              key={card.id}
+              name={card.name}
+              location={card.location}
+              age={card.age}
+              distance={card.distance}
+              image={card.image}
+              isFirst={true} // The isFirst prop is not necessary for each card render here
+            />
+          );
+        }}
+        onSwiped={onSwiped}
+        cardIndex={0}
+        stackSize={3}
+        stackScale={10}
+        stackSeparation={15}
+        backgroundColor={'transparent'}
+        containerStyle={styles.swiper}
+      />
+      <Footer />
     </View>
   );
 }
@@ -43,4 +56,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
+  swiper:{
+      backgroundColor: 'white',
+  }
 });

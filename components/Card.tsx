@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     // height: 600,
     // borderRadius: 20,
     width: width * 0.9,
-    height: height*0.7,
+    height: height*0.5,
     borderRadius: 20,
   },
   gradient: {
