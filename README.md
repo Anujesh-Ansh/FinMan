@@ -17,4 +17,6 @@ npx expo install expo-linear-gradient
 npx expo install expo-font
 
 npm install react-native-deck-swiper --save
+
+npm install react-native-reanimated react-native-view-overflow 
 ```
