@@ -16,4 +16,5 @@ npx expo start -c
 npx expo install expo-linear-gradient
 npx expo install expo-font
 
+npm install react-native-deck-swiper --save
 ```
