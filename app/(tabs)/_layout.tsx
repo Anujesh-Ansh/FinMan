@@ -25,7 +25,7 @@ export default function TabLayout() {
                 options={{
                     title: 'Learn',
                     headerTitle: 'Swap Cards',
-                    headerStyle: { backgroundColor: 'lightgreen' },
+                    headerStyle: { backgroundColor: '#e8e9ed' },
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons name="book" color={color} size={size} />
                     ),

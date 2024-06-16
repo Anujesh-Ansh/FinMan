@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
+import { StyleSheet, Text, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
@@ -10,12 +10,13 @@ interface ButtonProps {
 
 
 const Button:React.FC<ButtonProps> = ({name, size, color}) => {
+  
   return (
-    <TouchableWithoutFeedback>
+    <TouchableNativeFeedback>
         <View style={[styles.main, {borderColor: color}]}>
             <FontAwesome name={name} size={size} color={color} />
         </View>
-    </TouchableWithoutFeedback>
+    </TouchableNativeFeedback>
   )
 }
 
@@ -30,5 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'white',
+        elevation: 15,
     }
 })
