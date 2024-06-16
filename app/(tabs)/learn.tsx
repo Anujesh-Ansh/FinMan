@@ -43,9 +43,7 @@ export default function Learn() {
         stackScale={10}
         stackSeparation={15}
         backgroundColor={'transparent'}
-        containerStyle={styles.swiper}
       />
-      <Footer />
     </View>
   );
 }
@@ -56,7 +54,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
-  swiper:{
-      backgroundColor: 'white',
-  }
 });

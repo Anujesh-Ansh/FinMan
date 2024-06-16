@@ -1,5 +1,5 @@
 // Define the User interface
-interface User {
+export interface User {
     id: number;
     name: string;
     location: string;
