@@ -2,8 +2,8 @@ import { StyleSheet, View,Text } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { users as userArray } from '../../utils/data';
 import Card from '../../components/Card';
-import Footer from '../../components/Footer';
 import Swiper from 'react-native-deck-swiper';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Learn() {
   const [users, setUsers] = useState(userArray);
@@ -22,7 +22,8 @@ export default function Learn() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Scan</Text>
+      <Text style={styles.title}>Swipe </Text>
+      <MaterialIcons name="swap-horiz" color='black' size={90} style={styles.icon} />
       <Swiper
         cards={users}
         renderCard={(card) => {
@@ -60,5 +61,10 @@ const styles = StyleSheet.create({
     top:40,
     fontSize: 85,
     fontFamily: 'Ticketing',
+    marginBottom:20,
   },
+  icon:{
+    position:'absolute',
+    top:100,
+  }
 });
