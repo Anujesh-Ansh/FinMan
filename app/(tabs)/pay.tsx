@@ -82,7 +82,7 @@ export default function Pay() {
       </CameraView>
 
       <Pressable style={styles.button} onPress={() => setStat(prevStat => !prevStat)}>
-        <MaterialIcons name={stat ? 'flashlight-off' : 'flashlight-on'} color={stat ? 'yellow' : 'black'} size={30} />
+        <MaterialIcons name={stat ? 'flashlight-off' : 'flashlight-on'} color={stat ? '#ffc700' : 'black'} size={30} />
       </Pressable>
 
       {scanned && (
@@ -116,15 +116,21 @@ const styles = StyleSheet.create({
     position: 'absolute',
     borderRadius: 50,
     height: 60,
-    width:40,
-    right:width*0.45,
+    width:60,
+    left:width*0.44,
     
     zIndex: 999,
     flex:1,
-    // backgroundColor: 'blue',
+    backgroundColor: 'antiquewhite',
     alignItems:'center',
     justifyContent:'center',    
     top: height*0.6,
+
+    shadowColor: '#000',
+    shadowOffset: { width: 10, height: 10 },
+    shadowOpacity: 0.25,
+    shadowRadius: 10,
+    elevation:5,
   },
   refresh: {
     position: 'absolute',
