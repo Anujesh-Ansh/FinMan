@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Button, Dimensions, Pressable } from "react-native";
+import { Text, View, StyleSheet, Button, Dimensions, Pressable, Animated } from "react-native";
 import { CameraView, Camera } from "expo-camera";
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -7,6 +7,7 @@ export default function Pay() {
   const [hasPermission, setHasPermission] = useState<any>(null);
   const [scanned, setScanned] = useState<boolean>(false);
   const [stat,setStat] = useState<boolean>(false);
+  const [animation] = useState(new Animated.Value(0));
 
   useEffect(() => {
     const getCameraPermissions = async () => {
@@ -16,6 +17,26 @@ export default function Pay() {
 
     getCameraPermissions();
   }, []);
+
+  useEffect(() => {
+    if (!scanned) {
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(animation, {
+            toValue: 1,
+            duration: 1500,
+            useNativeDriver: true,
+          }),
+          Animated.timing(animation, {
+            toValue: 0,
+            duration: 1500,
+            useNativeDriver: true,
+          }),
+        ])
+      ).start();
+    }
+  }, [scanned]);
+
 
   const handleBarCodeScanned = ({ type, data }: {type:string;data:string}) => {
     setScanned(true);
@@ -29,6 +50,17 @@ export default function Pay() {
     return <Text>No access to camera</Text>;
   }
 
+  const animatedStyle = {
+    transform: [
+      {
+        translateY: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, Dimensions.get('window').width * 0.8],
+        }),
+      },
+    ],
+  };
+
   return (
     <View style={styles.container}>
 
@@ -41,14 +73,22 @@ export default function Pay() {
           barcodeTypes: ["qr", "pdf417"],
         }}
         style={styles.cameraView}
-      />
+      >
+        <View style={styles.cameraOverlay}>
+          <View style={styles.scannerFrame}>
+            <Animated.View style={[styles.scannerLine, animatedStyle]} />
+          </View>
+        </View>
+      </CameraView>
 
       <Pressable style={styles.button} onPress={() => setStat(prevStat => !prevStat)}>
-        <MaterialIcons name={stat ? 'flashlight-off' : 'flashlight-on'} color={stat ? 'yellow' : 'white'} size={30} />
+        <MaterialIcons name={stat ? 'flashlight-off' : 'flashlight-on'} color={stat ? 'yellow' : 'black'} size={30} />
       </Pressable>
 
       {scanned && (
-        <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
+        <Pressable style={styles.refresh} onPress={() => setScanned(false)}>
+          <MaterialIcons name="refresh" color='grey' size={50} />
+        </Pressable>
       )}
     </View>
   );
@@ -84,6 +124,38 @@ const styles = StyleSheet.create({
     // backgroundColor: 'blue',
     alignItems:'center',
     justifyContent:'center',    
-    top: height*0.35,
+    top: height*0.6,
+  },
+  refresh: {
+    position: 'absolute',
+    borderRadius: 50,
+    height: 60,
+    width:40,
+    right:width*0.45,
+    
+    zIndex: 999,
+    flex:1,
+    // backgroundColor: 'blue',
+    alignItems:'center',
+    justifyContent:'center',    
+    top: height*0.31,
+  },
+  cameraOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  scannerFrame: {
+    width: width * 0.8,
+    height: width *0.8,
+    
+    overflow: 'hidden',
+  },
+  scannerLine: {
+    width: '100%',
+    height: 2,
+    backgroundColor: 'red',
+    position: 'absolute',
+    top: 0,
   },
 });
