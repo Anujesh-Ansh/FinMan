@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View,Text } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { users as userArray } from '../../utils/data';
 import Card from '../../components/Card';
@@ -22,6 +22,7 @@ export default function Learn() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Scan</Text>
       <Swiper
         cards={users}
         renderCard={(card) => {
@@ -53,5 +54,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'white',
+  },
+  title: {
+    position:'absolute',
+    top:40,
+    fontSize: 85,
+    fontFamily: 'Ticketing',
   },
 });

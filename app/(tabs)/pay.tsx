@@ -64,6 +64,8 @@ export default function Pay() {
   return (
     <View style={styles.container}>
 
+      <Text style={styles.title}>Scan</Text>
+
       
 
       <CameraView
@@ -101,6 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
+    alignItems:'center',
   },
   cameraView:{
     borderColor: 'red',
@@ -110,7 +113,14 @@ const styles = StyleSheet.create({
     marginVertical: height*0.25,
     marginHorizontal:width*0.1,
     borderRadius:40,
+    width:width*0.8,
 
+  },
+  title: {
+    position:'absolute',
+    top:40,
+    fontSize: 85,
+    fontFamily: 'Ticketing',
   },
   button: {
     position: 'absolute',
