@@ -10,8 +10,8 @@ const Task = (props:TaskProps) => {
         <View style={styles.taskWrapper}>
             <View style={styles.leftOption}>
                 <TouchableOpacity style={styles.square}></TouchableOpacity>
+                <Text style={styles.mainText}>{props.text}</Text>
             </View>
-            <Text style={styles.mainText}>{props.text}</Text>
             <View style={styles.circular}></View>
         </View>
     )
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
         // borderWidth:1,
         // padding:5,
         // backgroundColor:'white',
-        // right:-270,
 
         width:12,
         height:12,
