@@ -84,6 +84,9 @@ const styles = StyleSheet.create({
   goals: {
     // borderColor: 'blue',
     // borderWidth:3,
-    padding:20,
+    padding:10,
+    display:'flex',
+    flexDirection:'column',
+    
   },
 });
