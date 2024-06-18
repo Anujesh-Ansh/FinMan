@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Task from "../../components/Task";
 import { ScrollView } from "react-native-gesture-handler";
 import { MaterialIcons } from '@expo/vector-icons';
@@ -21,6 +21,9 @@ export default function Goal() {
       {/* Adding Feature*/}     
       <View style={styles.addingFeature}>
         <Text>Heelo</Text>
+        <TouchableOpacity style={styles.addButton}>
+          <MaterialIcons name="add" color='black' size={20} />
+        </TouchableOpacity>
       </View>
         {/* Adding Feature -> Typing Space*/}
         
@@ -94,6 +97,17 @@ const styles = StyleSheet.create({
   },
 
 
+
+  addButton: {
+    backgroundColor: '#55bcf6',
+    width: 40,
+    height: 40,
+    borderRadius: 10,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    elevation:5,
+  },
 
 
   goals: {
