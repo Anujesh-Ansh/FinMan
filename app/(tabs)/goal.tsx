@@ -3,8 +3,8 @@ export default function Goal() {
   
   return (
     <View style={styles.container}>
-      {/* Heading */}
-      
+      {/* Heading -> Goals */}
+
       {/* Adding Feature */}
 
       {/* Goals */}
