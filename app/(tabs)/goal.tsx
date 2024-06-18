@@ -19,7 +19,7 @@ export default function Goal() {
       </View>
 
       {/* Adding Feature*/}     
-      <View>
+      <View style={styles.addingFeature}>
         <Text>Heelo</Text>
       </View>
         {/* Adding Feature -> Typing Space*/}
@@ -29,7 +29,7 @@ export default function Goal() {
 
       {/* Goals */}
       <ScrollView style={styles.goals}>
-        <Task text={'Task 1'}/>
+        <Task text={'Task 1 hi hello hwo are u webewe asda dfgd kgkjgj sdfsd sdf sd fsd fs df ss df sds sd fs dfs d s d fsd fs d fs df sd fs d fs d s df sdfs df sd f sd fs d fs df sdf sd fs'}/>
         <Task text={'Task 2'}/>
         <Task text={'Task 3'}/>
         <Task text={'Task 4'}/>
@@ -81,6 +81,21 @@ const styles = StyleSheet.create({
     fontSize: 80,
     fontFamily: 'Ticketing',
   },
+
+  addingFeature: {
+    borderColor: 'green',
+    borderWidth:3,
+    padding:10,
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    height:60,
+  },
+
+
+
+
   goals: {
     // borderColor: 'blue',
     // borderWidth:3,

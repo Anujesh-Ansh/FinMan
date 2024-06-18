@@ -52,23 +52,19 @@ const styles = StyleSheet.create({
         marginRight: 15,
     },
     mainText: {
-        fontSize: 16,
+        fontSize: 22,
         fontFamily:'Ticketing',
         maxWidth:'80%',
         
     },
     circular:{
-        // borderRadius:150,
-        // borderColor:'black',
-        // borderWidth:1,
-        // padding:5,
-        // backgroundColor:'white',
-
+        
         width:12,
         height:12,
-        borderColor: 'black',
+        borderColor: 'grey',
         borderWidth:2,
         borderRadius:5,
+        backgroundColor:'white',
 
     },
 
