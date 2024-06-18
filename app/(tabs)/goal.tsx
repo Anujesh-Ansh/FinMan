@@ -3,10 +3,12 @@ export default function Goal() {
   
   return (
     <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Goals</Text>
-        <Text style={styles.subtitle}>Here all the Goals & Chores would be listed over here !!</Text>
-      </View>
+      {/* Heading */}
+      
+      {/* Adding Feature */}
+
+      {/* Goals */}
+
     </View>
   );
 }
