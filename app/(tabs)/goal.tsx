@@ -5,7 +5,8 @@ export default function Goal() {
     <View style={styles.container}>
       {/* Heading -> Goals */}
 
-      {/* Adding Feature */}
+      {/* Adding Feature -> Typing Space*/}
+      
 
       {/* Goals */}
 
