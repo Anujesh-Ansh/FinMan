@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ header, content, color }) => {
           
           <View style={styles.divider}></View>
           
-          <Text style={styles.content}>Live in {content}</Text>
+          <Text style={styles.content}>{content}</Text>
 
         </View>
     </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     position:'absolute',
     top: height*0.15,
     width: width * 0.9,
-    height: height*0.6,
+    height: height*0.53,
     borderRadius: 40,
     
   },
