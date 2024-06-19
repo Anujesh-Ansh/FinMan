@@ -17,9 +17,11 @@ export default function Goal() {
   }
 
   const handleDeleteTask = (index: number) => {
-    let itemsCopy = [...goalItems];
-    itemsCopy.splice(index, 1);
-    setGoalItems(itemsCopy);
+    if (goal != null || goal != ''){
+      let itemsCopy = [...goalItems];
+      itemsCopy.splice(index, 1);
+      setGoalItems(itemsCopy);
+    }
   }
   
   return (
