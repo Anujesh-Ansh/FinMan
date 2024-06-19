@@ -30,12 +30,8 @@ export default function Learn() {
           return (
             <Card
               key={card.id}
-              name={card.name}
-              location={card.location}
-              age={card.age}
-              distance={card.distance}
-              image={card.image}
-              isFirst={true} // The isFirst prop is not necessary for each card render here
+              header={card.header}
+              content={card.content}
             />
           );
         }}
