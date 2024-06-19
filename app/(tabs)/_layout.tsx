@@ -34,8 +34,8 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="goal"
                 options={{
-                    title: 'Goal',
-                    headerTitle: 'Chores',
+                    title: 'Goals',
+                    headerTitle: 'Goals',
                     headerStyle: { backgroundColor: 'lavender' },
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons name="star" color={color} size={size} />
