@@ -6,6 +6,7 @@ interface TaskProps {
     text: string;
     completed?: boolean;
     onToggleCompletion: (completed: boolean) => void;
+    onDelete: () => void;
 }
 
 const Task = (props: TaskProps) => {
@@ -15,7 +16,7 @@ const Task = (props: TaskProps) => {
     return (
         <View style={styles.taskWrapper}>
             <View style={styles.leftOption}>
-                <TouchableOpacity style={styles.square}></TouchableOpacity>
+                <TouchableOpacity style={styles.square} onPress={props.onDelete}></TouchableOpacity>
                 <Text style={styles.mainText}>{props.text}</Text>
             </View>
             <TouchableOpacity style={styles.checkBtn} onPress={() => setIsChecked(prevIsChecked => !prevIsChecked)}>

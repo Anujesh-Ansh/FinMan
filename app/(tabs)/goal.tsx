@@ -2,9 +2,25 @@ import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableO
 import Task from "../../components/Task";
 import { ScrollView } from "react-native-gesture-handler";
 import { MaterialIcons } from '@expo/vector-icons';
+import { useState } from "react";
 
 
 export default function Goal() {
+
+  const [goal,setGoal] = useState<string>('');
+  const [goalItems, setGoalItems] = useState<string[]>([]);
+
+
+  const handleAddTask= () => {
+    setGoalItems([...goalItems, goal]);
+    setGoal('');
+  }
+
+  const handleDeleteTask = (index: number) => {
+    let itemsCopy = [...goalItems];
+    itemsCopy.splice(index, 1);
+    setGoalItems(itemsCopy);
+  }
   
   return (
     <View style={styles.container}>
@@ -24,9 +40,9 @@ export default function Goal() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.addingFeature}
       >
-        <TextInput style={styles.input} placeholder={"Mention ur Goals"}/>
+        <TextInput style={styles.input} placeholder={"Mention ur Goals"} value={goal} onChangeText={text => setGoal(text)}/>
 
-        <TouchableOpacity style={styles.addButton}>
+        <TouchableOpacity style={styles.addButton} onPress={handleAddTask}>
           <MaterialIcons name="add" color='black' size={20} />
         </TouchableOpacity>
 
@@ -40,10 +56,18 @@ export default function Goal() {
 
       {/* Goals */}
       <ScrollView style={styles.goals}>
-        <Task text={'Task 1 hi hello hwo are u webewe asda dfgd kgkjgj sdfsd sdf sd fsd fs df ss df sds sd fs dfs d s d fsd fs d fs df sd fs d fs d s df sdfs df sd f sd fs d fs df sdf sd fs'} onToggleCompletion={function (completed: boolean): void {
-          throw new Error("Function not implemented.");
-        } }/>
-        
+
+        {
+          goalItems.map((item, index)=>{
+            return <Task 
+                      key={index} 
+                      text={item} 
+                      onDelete={() => handleDeleteTask(index)} 
+                      onToggleCompletion={function (completed: boolean): void {
+              throw new Error("Function not implemented.");
+            } }/>
+          })
+        }        
         
         
         
