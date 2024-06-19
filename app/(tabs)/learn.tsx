@@ -32,6 +32,7 @@ export default function Learn() {
               key={card.id}
               header={card.header}
               content={card.content}
+              color={card.color}
             />
           );
         }}

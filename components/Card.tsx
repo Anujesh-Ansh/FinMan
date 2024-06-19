@@ -8,11 +8,12 @@ const {width, height} = Dimensions.get('screen')
 interface CardProps {
   header: string;
   content: string;
+  color: string;
 }
 
-const Card: React.FC<CardProps> = ({ header, content }) => {
+const Card: React.FC<CardProps> = ({ header, content, color }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container , {backgroundColor:color}]} >
         <View style={styles.userContainer}>
           <View style={styles.box}>
             <Text style={styles.header}>{header}</Text>
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     width: width * 0.9,
     height: height*0.6,
     borderRadius: 40,
-    backgroundColor: '#FFC700',
+    
   },
   userContainer: {
     position:'absolute',
@@ -49,7 +50,8 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
   header: {
-    fontSize:50,
+    padding:10,
+    fontSize:60,
     
     color:'black',
     fontFamily: "Ticketing",
@@ -61,8 +63,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   content: {
-    fontSize: 18,
-    color:'white',
-    fontWeight:'300',
+    fontSize: 25,
+    color:'black',
+    fontFamily: "Ticketing",
   }
 });
