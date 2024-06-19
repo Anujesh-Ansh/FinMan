@@ -10,24 +10,17 @@ import { MaterialIcons } from '@expo/vector-icons';
 export default function Learn() {
   const [users, setUsers] = useState(userArray);
   const [isQuizVisible, setQuizVisible] = useState(false);
-  const [initialLoad, setInitialLoad] = useState(true); // Track initial load
 
   useEffect(() => {
-    if (initialLoad) {
-      setInitialLoad(false); // Set initial load to false after first render
-    } else {
-      setUsers(userArray); // Reset users array after quiz modal is closed
+    if (!users.length) {
+      setQuizVisible(true); // Show quiz when all cards are swiped
     }
-  }, [isQuizVisible]);
+  }, [users.length]);
 
   const onSwiped = (index: number) => {
     if (index === users.length - 1) {
       setUsers([]); // Clear users array when the last card is swiped
     }
-  };
-
-  const handleQuizClose = () => {
-    setQuizVisible(false); // Hide quiz modal
   };
 
   return (
@@ -54,7 +47,7 @@ export default function Learn() {
         backgroundColor={'transparent'}
       />
       <Modal visible={isQuizVisible} animationType="slide">
-        <Quiz questions={quizQuestions} onClose={handleQuizClose} />
+        <Quiz questions={quizQuestions} onClose={() => setQuizVisible(false)} />
       </Modal>
     </View>
   );
