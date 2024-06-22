@@ -26,4 +26,5 @@ npx expo install expo-camera
 
 # Todo
 -> Leaderboard as a Model on left
+<br>
 -> Profile page on right
