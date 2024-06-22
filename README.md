@@ -22,3 +22,6 @@ npm install react-native-reanimated react-native-view-overflow
 
 npx expo install expo-camera
 ```
+
+
+#Todo
