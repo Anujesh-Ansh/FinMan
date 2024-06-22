@@ -28,3 +28,5 @@ npx expo install expo-camera
 -> Leaderboard as a Model on left
 <br>
 -> Profile page on right
+<br>
+-> Chores Page on left 
