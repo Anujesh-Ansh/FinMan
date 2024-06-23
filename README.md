@@ -31,7 +31,7 @@ npm install @react-native-async-storage/async-storage
 # Todo
 
 <br>
--> Profile page on right
+
 <br>
 
 ```
