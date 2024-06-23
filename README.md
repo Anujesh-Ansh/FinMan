@@ -22,11 +22,3 @@ npm install react-native-reanimated react-native-view-overflow
 
 npx expo install expo-camera
 ```
-
-
-# Todo
--> Leaderboard as a Model on left
-<br>
--> Profile page on right
-<br>
--> Chores Page on left 
