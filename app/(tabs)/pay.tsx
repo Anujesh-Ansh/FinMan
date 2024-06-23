@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Button, Dimensions, Pressable, Animated } from "react-native";
+import { Text, View, StyleSheet, Dimensions, Pressable, Animated } from "react-native";
 import { CameraView, Camera } from "expo-camera";
 import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 export default function Pay() {
   const [hasPermission, setHasPermission] = useState<any>(null);
   const [scanned, setScanned] = useState<boolean>(false);
-  const [stat,setStat] = useState<boolean>(false);
+  const [stat, setStat] = useState<boolean>(false);
   const [animation] = useState(new Animated.Value(0));
+  const router = useRouter();
 
   useEffect(() => {
     const getCameraPermissions = async () => {
@@ -37,10 +39,9 @@ export default function Pay() {
     }
   }, [scanned]);
 
-
-  const handleBarCodeScanned = ({ type, data }: {type:string;data:string}) => {
+  const handleBarCodeScanned = ({ type, data }: { type: string; data: string }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    router.push({ pathname: 'Payment Gateway', params: { data } }); // Navigate to the ScannedData screen
   };
 
   if (hasPermission === null) {
@@ -63,10 +64,7 @@ export default function Pay() {
 
   return (
     <View style={styles.container}>
-
       <Text style={styles.title}>Scan</Text>
-
-      
 
       <CameraView
         enableTorch={stat}
@@ -96,29 +94,28 @@ export default function Pay() {
   );
 }
 
-const {width, height} = Dimensions.get('screen')
+const { width, height } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
-    alignItems:'center',
+    alignItems: 'center',
   },
-  cameraView:{
+  cameraView: {
     borderColor: 'red',
     borderWidth: 5,
-    flex:1,
-    top: -(height*0.1),
-    marginVertical: height*0.25,
-    marginHorizontal:width*0.1,
-    borderRadius:40,
-    width:width*0.8,
-
+    flex: 1,
+    top: -(height * 0.1),
+    marginVertical: height * 0.25,
+    marginHorizontal: width * 0.1,
+    borderRadius: 40,
+    width: width * 0.8,
   },
   title: {
-    position:'absolute',
-    top:40,
+    position: 'absolute',
+    top: 40,
     fontSize: 85,
     fontFamily: 'Ticketing',
   },
@@ -126,35 +123,31 @@ const styles = StyleSheet.create({
     position: 'absolute',
     borderRadius: 50,
     height: 60,
-    width:60,
-    left:width*0.44,
-    
+    width: 60,
+    left: width * 0.44,
     zIndex: 999,
-    flex:1,
+    flex: 1,
     backgroundColor: 'antiquewhite',
-    alignItems:'center',
-    justifyContent:'center',    
-    top: height*0.6,
-
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: height * 0.6,
     shadowColor: '#000',
     shadowOffset: { width: 10, height: 10 },
     shadowOpacity: 0.25,
     shadowRadius: 10,
-    elevation:5,
+    elevation: 5,
   },
   refresh: {
     position: 'absolute',
     borderRadius: 50,
     height: 60,
-    width:40,
-    right:width*0.45,
-    
+    width: 40,
+    right: width * 0.45,
     zIndex: 999,
-    flex:1,
-    // backgroundColor: 'blue',
-    alignItems:'center',
-    justifyContent:'center',    
-    top: height*0.31,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: height * 0.31,
   },
   cameraOverlay: {
     ...StyleSheet.absoluteFillObject,
@@ -163,8 +156,7 @@ const styles = StyleSheet.create({
   },
   scannerFrame: {
     width: width * 0.8,
-    height: width *0.8,
-    
+    height: width * 0.8,
     overflow: 'hidden',
   },
   scannerLine: {

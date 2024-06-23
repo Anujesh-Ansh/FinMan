@@ -21,4 +21,15 @@ npm install react-native-deck-swiper --save
 npm install react-native-reanimated react-native-view-overflow 
 
 npx expo install expo-camera
+
+npm install @react-native-async-storage/async-storage
 ```
+
+
+
+# Todo
+-> Leaderboard as a Model on left
+<br>
+-> Profile page on right
+<br>
+-> Chores Page on left 

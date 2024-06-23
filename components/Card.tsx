@@ -33,11 +33,14 @@ export default Card;
 const styles = StyleSheet.create({
   container: {
     position:'absolute',
+    alignSelf:'center',
+    
+    borderColor:'black',
+    borderWidth:5,
     top: height*0.15,
     width: width * 0.9,
-    height: height*0.53,
+    height: height*0.46,
     borderRadius: 40,
-    
   },
   userContainer: {
     position:'absolute',

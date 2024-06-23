@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anujesh_ansh.FinMan"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -28,6 +29,14 @@
     "plugins": [
       "expo-router",
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ebd5b980-722c-4cd3-bd22-f6e5e18e79b3"
+      }
+    }
   }
 }

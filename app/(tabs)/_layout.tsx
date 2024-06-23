@@ -1,7 +1,8 @@
-import { Tabs } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { Link, Tabs } from 'expo-router';
+import { Pressable, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
 
@@ -24,10 +25,24 @@ export default function TabLayout() {
                 name="learn"
                 options={{
                     title: 'Learn',
-                    headerTitle: 'Swap Cards',
+                    headerTitle: '',
                     headerStyle: { backgroundColor: '#e8e9ed' },
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons name="book" color={color} size={size} />
+                    ),
+                    headerRight: () => (
+                        <Link href="../Points" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <MaterialIcons
+                                        name="toll"
+                                        size={25}
+                                        color={'black'}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
                     ),
                 }}
             />
@@ -35,7 +50,7 @@ export default function TabLayout() {
                 name="goal"
                 options={{
                     title: 'Goals',
-                    headerTitle: 'Goals',
+                    headerTitle: '',
                     headerStyle: { backgroundColor: 'lavender' },
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons name="star" color={color} size={size} />
@@ -44,23 +59,54 @@ export default function TabLayout() {
             />
             <Tabs.Screen
                 name="index"
+
                 options={{
                     title: 'Home',
-                    headerTitle: 'Expense Tracker',
+                    headerTitle: '',
                     headerStyle: { backgroundColor: 'lightblue' },
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons name="home" color={color} size={size} />
                     ),
+                    
+                    headerLeft: () => (
+                        <Link href="./LeaderBoard" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <MaterialIcons
+                                        name="leaderboard"
+                                        size={25}
+                                        color={'black'}
+                                        style={{ marginLeft: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
+
+                    headerRight: () => (
+                        <Link href="./Profile" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <MaterialIcons
+                                        name="person-4"
+                                        size={25}
+                                        color={'black'}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
                 }}
             />
             <Tabs.Screen
-                name="leader"
+                name="chores"
                 options={{
-                    title: 'LeaderBoard',
-                    headerTitle: 'LeaderBoard',
+                    title: 'Chores',
+                    headerTitle: '',
                     headerStyle: { backgroundColor: 'lightgrey' },
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialIcons name="leaderboard" color={color} size={size} />
+                        <MaterialIcons name="list" color={color} size={size} />
                     ),
                 }}
             />
@@ -68,7 +114,7 @@ export default function TabLayout() {
                 name="pay"
                 options={{
                     title: 'Pay',
-                    headerTitle: 'Scan the Code',
+                    headerTitle: '',
                     headerStyle: { backgroundColor: 'pink' },
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons name="payment" color={color} size={size} />
@@ -100,7 +146,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Ticketing',
     },
     tabBarLabel: {
-        fontSize: 10,
+        fontSize: 15,
         fontFamily: 'Ticketing',
     },
     tabBarItem: {

@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
-export default function LeaderBoard() {
-  
+export default function Chores() {
+    
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text style={styles.title}>Leader</Text>
-        <Text style={styles.title}>Board</Text>
-        <Text style={styles.subtitle}>Here all the users detail would be displayed according to the virtual coinss they have earned.</Text>
+        <Text style={styles.title}>Chores</Text>
+        <Text style={styles.subtitle}>Here all the chores and the assignments would be displayed.</Text>
       </View>
+      
     </View>
   );
 }
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 95,
+    
     fontFamily: 'Ticketing',
   },
   subtitle: {
