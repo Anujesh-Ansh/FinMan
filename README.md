@@ -29,7 +29,7 @@ npm install @react-native-async-storage/async-storage
 
 
 # Todo
--> Leaderboard as a Model on left
+
 <br>
 -> Profile page on right
 <br>
