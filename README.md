@@ -33,5 +33,5 @@ npm install @react-native-async-storage/async-storage
 <br>
 -> Profile page on right
 <br>
--> Chores Page on left 
+
 ```
