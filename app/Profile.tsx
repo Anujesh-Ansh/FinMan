@@ -9,7 +9,7 @@ export default function Profile() {
       <View style={styles.main}>
         <View style={styles.imageBorder}>
           <Image
-            source={require('../assets/images/lee.jpg')} // Adjust the path to your profile picture
+            source={require('../assets/images/profilePhoto.jpg')} // Adjust the path to your profile picture
             style={styles.profileImage}
           />
         </View>

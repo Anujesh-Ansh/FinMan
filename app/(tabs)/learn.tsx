@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    top: 100,
+    top: 120,
   },
   scrollContainer: {
     flexGrow: 1,

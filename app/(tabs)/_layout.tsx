@@ -108,6 +108,20 @@ export default function TabLayout() {
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons name="list" color={color} size={size} />
                     ),
+                headerRight: () => (
+                        <Link href="../Scanner" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <MaterialIcons
+                                        name="qr-code"
+                                        size={25}
+                                        color={'black'}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
                 }}
             />
             <Tabs.Screen

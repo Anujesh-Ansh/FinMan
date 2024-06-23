@@ -67,8 +67,8 @@ export default function Goal() {
     <View style={styles.container}>
       <View style={styles.goalWrapper}>
         <View style={styles.header}>
-          <Text style={styles.title}>GOALS</Text>
-          <MaterialIcons name="star" color="black" size={70} />
+          <Text style={styles.title}>Goals</Text>
+          <MaterialIcons name="star" color="black" size={50} />
         </View>
       </View>
 
@@ -111,11 +111,15 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
+    // justifyContent: 'flex-start',
     gap: 20,
+    marginLeft:10,
+    marginBottom:20,
   },
   title: {
-    fontSize: 80,
+    fontSize: 70,
     fontFamily: 'Ticketing',
+    
   },
   addingFeature: {
     padding: 10,
