@@ -36,22 +36,22 @@ export const quizQuestions: Question[] = [
         answer: 'All of the above',
         color: '#ff7eb9',
     },
-    {
-        question: 'What is the benefit of diversification in investment?',
-        options: ['Risk reduction', 'Higher returns', 'Both A and B', 'None of the above'],
-        answer: 'Both A and B',
-        color: '#ffcccb',
-    },
-    {
-        question: 'Which of the following is a stock market index?',
-        options: ['S&P 500', 'Dow Jones', 'NASDAQ', 'All of the above'],
-        answer: 'All of the above',
-        color: '#d1c4e9',
-    },
-    {
-        question: 'What is an ETF?',
-        options: ['Exchange Traded Fund', 'Equity Traded Fund', 'Extra Trade Fund', 'None of the above'],
-        answer: 'Exchange Traded Fund',
-        color: '#b2ebf2',
-    },
+    // {
+    //     question: 'What is the benefit of diversification in investment?',
+    //     options: ['Risk reduction', 'Higher returns', 'Both A and B', 'None of the above'],
+    //     answer: 'Both A and B',
+    //     color: '#ffcccb',
+    // },
+    // {
+    //     question: 'Which of the following is a stock market index?',
+    //     options: ['S&P 500', 'Dow Jones', 'NASDAQ', 'All of the above'],
+    //     answer: 'All of the above',
+    //     color: '#d1c4e9',
+    // },
+    // {
+    //     question: 'What is an ETF?',
+    //     options: ['Exchange Traded Fund', 'Equity Traded Fund', 'Extra Trade Fund', 'None of the above'],
+    //     answer: 'Exchange Traded Fund',
+    //     color: '#b2ebf2',
+    // },
 ];

@@ -111,13 +111,13 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'flex-start',
+    justifyContent: 'center',
     gap: 20,
     marginLeft:10,
     marginBottom:20,
   },
   title: {
-    fontSize: 70,
+    fontSize: 80,
     fontFamily: 'Ticketing',
     
   },
