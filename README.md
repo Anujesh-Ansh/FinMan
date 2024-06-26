@@ -30,7 +30,7 @@ npm install @react-native-async-storage/async-storage
 
 # Todo
 ### 1 -> Dashboard
-### -> Payment GateWay
+### 2 -> Payment GateWay
 ### -> Game
 ### -> Profile
 ### -> Transactions
